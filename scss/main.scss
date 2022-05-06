@@ -82,16 +82,6 @@ $font-sizes:(ceroSeis:0.6rem, ceroSiete:0.7rem, ceroNueve:0.9rem, uno:1rem, unoD
                 }
         }
 }
-
-.vacio{ 
-    height: 370px;
-    width: 400px;
-    text-align: center;
-    font-size:map-get($font-sizes, dos);
-    line-height: 100px;
-    border: #000 0.2rem solid;
-    position: relative;
-}
 .Parrafo1{   
     position: relative;
     @include flexs (flex, row, left);
@@ -114,9 +104,10 @@ $font-sizes:(ceroSeis:0.6rem, ceroSiete:0.7rem, ceroNueve:0.9rem, uno:1rem, unoD
     width: 100%;
     margin: auto;
     margin-top: 20px;
+    margin-left: 14px;
     padding: 10px 30px;
     font-size:map-get($font-sizes, uno);
-    line-height: 25px;
+    line-height: 20px;
     font-family: Arial, Helvetica, sans-serif;
     height: 30rem;
     text-align: justify;
@@ -143,10 +134,11 @@ $font-sizes:(ceroSeis:0.6rem, ceroSiete:0.7rem, ceroNueve:0.9rem, uno:1rem, unoD
     width: 100%;
     margin: auto;
     margin-top: 20px;
+    margin-left: 14px;
     margin-bottom: 30px;
     padding: 10px 30px;
     font-size:map-get($font-sizes, uno);
-    line-height: 25px;
+    line-height: 20px;
     font-family: Arial, Helvetica, sans-serif;
     height: 20rem;
     text-align: justify;
@@ -199,6 +191,7 @@ $font-sizes:(ceroSeis:0.6rem, ceroSiete:0.7rem, ceroNueve:0.9rem, uno:1rem, unoD
 }
 .qs__titGral, .pa__titGral, .em__titGral{   
     display: inline-block;
+    position: relative;
     margin-left: 180px;
     margin-top: 20px;
     font-size:map-get($font-sizes, dosCinco);
@@ -222,39 +215,39 @@ $font-sizes:(ceroSeis:0.6rem, ceroSiete:0.7rem, ceroNueve:0.9rem, uno:1rem, unoD
 .qs__iframe img:hover, .pa__iframe img:hover, .em__iframe img:hover{    
     transform: scale(1.1);
 }
-.qs__global, .em__global{    
+.qs__global, .em__global{   
     margin: auto;
     margin-top: 30px;
+    margin-left: 14px;
     padding: 50px 30px;
     position: relative;
     // font-size: 1.4rem;  /*esto equivale a 15px */
-    font-size:map-get($font-sizes, unoCuatro);
+    font-size:map-get($font-sizes, uno);
     width: 100%;
-    line-height: 25px;
+    line-height: 20px;
     font-family: Arial, Helvetica, sans-serif;
     height: 35rem;
     text-align: justify;
     background-color:  $coloropacidad;
 }
-
-.qs__turnos{
-    width: 100%;
-    text-align: left;
-    margin-top: 50px;
+.em__global{    
+    margin-left: 24px;
+}
+.qs__turnos, .pa__turnos, .em__turnos{
+    @include flexs (flex, row, center); 
+    text-align: center;
     font-size:map-get($font-sizes, dos);
     font-style: italic; 
     position: relative;
-    margin-left: 30px;
-    height: 200px;
+    height: 140px;
     display: flex;
-    align-items: center;
-}
-.qs__vacio{ 
-    height: 250px;
+    align-items: flex-start;
 }
 .qs__global .qs__negrita{ 
     font-weight: bold;
     font-size:map-get($font-sizes, unoSeis);
+    text-align: center;
+    line-height: 37px;
 }
 .xx__footer{   
     height: 150px;
@@ -269,40 +262,25 @@ $font-sizes:(ceroSeis:0.6rem, ceroSiete:0.7rem, ceroNueve:0.9rem, uno:1rem, unoD
     line-height: 30px;
     text-align: left;
 }
-.xx__footer__contacto{  
-    display: inline-block;
-    width: 120px;
-    height: 50px;
-    color: black;
-    line-height: 30px;
-    text-align: center;
-    margin-left: 100px; 
-    background-color: aquamarine;
-    font-size:map-get($font-sizes, uno);
-    font-family: Arial, Helvetica, sans-serif;
-    border-color:rgb(243, 166, 224);
-    border-style: solid;
-    a{  
-        line-height: 50px;  
-        text-decoration: none;
-      }
-}
 .xx__footer__leyendas{
-    display: inline-block;
-    width: 150px;
-    height: 30px;
-    margin-left: 180px;
-    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
     p{  
     text-align: center;
-    font-size:map-get($font-sizes, unoCuatro);
+    font-size:map-get($font-sizes, dos);
 
     }
-    iconos{  
-        width: 150px;
+    .iconos{  
+        @include flexs (flex, row, center);
         height: 50px;
         text-align: center;
-        margin-top: 10px;
+        align-items: stretch
+    }
+    .icon-facebook, .icon-instagram, .icon-linkedin{    
+        display: inline-block;
+        padding: 5px;
+        font-size: 38px;
+        color: #000;
     }
 }
 /* ------------------------página de encuesta---------------- */
@@ -310,10 +288,12 @@ $font-sizes:(ceroSeis:0.6rem, ceroSiete:0.7rem, ceroNueve:0.9rem, uno:1rem, unoD
 .en__titGral1{ 
     @extend .qs__titGral;
     margin-top: 40px;
+    margin-left: 114px;
 }
 .en__titGral2{ 
     @extend .en__titGral1;
-    margin-left: 250px;
+    margin-left: 176px;
+    margin-top: 14px;
 }
 .en__cuerpo{ 
     width: 100%;
@@ -325,7 +305,7 @@ $font-sizes:(ceroSeis:0.6rem, ceroSiete:0.7rem, ceroNueve:0.9rem, uno:1rem, unoD
 
 .en__tituloLabel{
     font-style: normal;    
-    font-size:map-get($font-sizes, dos);
+    font-size:map-get($font-sizes, tres);
     font-weight: bold;
     color: black;
     margin-top:15px;
@@ -340,13 +320,6 @@ $font-sizes:(ceroSeis:0.6rem, ceroSiete:0.7rem, ceroNueve:0.9rem, uno:1rem, unoD
 }
 
 input[type=radio] { border: 0px; width: 2%; height: 1em; }
-
-.en__vacio{ 
-    height: 50px;
-}
-.en__vacio1{ 
-    height: 25px;
-}
 
 .agrandarTamaño{    
     font-size:map-get($font-sizes, dos);
@@ -397,9 +370,9 @@ input[type=radio] { border: 0px; width: 2%; height: 1em; }
     width: 100%;
     margin: auto;
     margin-top: 30px;
- 
     text-align: center;
     font-size:map-get($font-sizes, dos);
+    text-decoration: underline solid;
 }   
 .bl__tituloAutor{    
     width: 100%;
@@ -462,27 +435,11 @@ input[type=radio] { border: 0px; width: 2%; height: 1em; }
     padding-top: 15px;
     position: relative;
     font-family: Arial, Helvetica, sans-serif;
-    font-size:map-get($font-sizes, unoDos);
+    font-size:map-get($font-sizes, uno);
     margin-top: 30px;
+    margin-left: 14px;
     background-color:  $coloropacidad;
-    margin: auto;
     text-align: left;
-}
-
-
-.pa__turnos{
-    width: 100%;
-    text-align: left;
-    font-size:map-get($font-sizes, Tres);
-    font-style: italic; 
-    position: relative;
-    margin-left: 30px;
-    margin-top: 60px;
-    margin-bottom: 20px;
-    height: 100px;
-}
-.pa__vacio{ 
-    height:150px ;
 }
 /*-------------------------- pagina Empresas-------------- */
 
@@ -490,13 +447,6 @@ input[type=radio] { border: 0px; width: 2%; height: 1em; }
     @include flexs (flex, row, flex-start);
     margin-top: 40px;
     
-}
-.em__turnos{
-    @extend .qs__turnos;
-    margin-top: 15px;
-}
-.em__vacio{ 
-    height: 200px;
 }
 
 /*---------------------------- pagina de contacto------------- */
@@ -519,10 +469,10 @@ input[type=radio] { border: 0px; width: 2%; height: 1em; }
     margin-left: 30px;
 }
 .co__caja{ 
-    width: 300px;
+    width: 430px;
     line-height: 50px;
     border: 1px;
-    background-color:rgb(203, 247, 232) ;
+    background-color: #73f0d8;
     margin-left: 30px;
     padding-left: 20px;
 }
@@ -540,9 +490,9 @@ input[type=radio] { border: 0px; width: 2%; height: 1em; }
     background-image: linear-gradient(rgb(203, 247, 232), rgb(243, 203, 233));
 }
 .co__caja1{ 
-    width: 470px;
+    width: 430px;
     height: 200px;
-    background-color:rgb(203, 247, 232) ;
+    background-color: #73f0d8;
     margin-left: 30px;
     padding-left: 20px;
 }
@@ -605,28 +555,29 @@ textarea { border: 1px; font-size: 1.2rem; }
         font-size:map-get($font-sizes, unoDos);
      }
     .qs__global { 
-        height: 45rem;
+        height: 38rem;
     }
-    .qs__vacio{ 
-       height: 100px;
-    }
-    .qs__turnos{  
-       height: 100px;
-       font-size:map-get($font-sizes, dos);
+    .qs__turnos, .pa__turnos, .em__turnos{  
+       height: 140px;
+       font-size:map-get($font-sizes, unoSeis);
+       text-align: center;
+       align-items: flex-start;
     } 
-    .xx__footer__contacto{  
-       margin-left: 0px;
-    }
     .pa__global{ 
        height: 52rem;
     }
     .em__global{    
-        height: 45rem;
+        height: 37rem;
     }
-    .em__turnos{    
-        margin-top: 72px;
+    .xx__footer__p{ 
+        text-align: center;
     }
- 
+    .en__titGral1{  
+        margin-left: 10px;
+    }
+    .en__titGral2{  
+        margin-left: 83px;
+    }
 }
 /*------------------------------------------------------ tamaño entre 768 y 780-------------------------------------- */
 @media screen and (min-width:768px) and (max-width:780px) {
@@ -656,25 +607,24 @@ textarea { border: 1px; font-size: 1.2rem; }
         width: 20rem;
         height: 20rem;
     }
-    .pa__turnos, .em__turnos{ 
-        margin-top: 50px;
-    }
     .pa__global{   
         height: 50rem;
     }
     .qs__global, .em__global{ 
-        height: 45rem;
+        height: 38rem;
     }
-    .qs__turnos{ 
-        height: 100px;
+    .co__caja, .co__caja1{  
+        width: 352px;
     }
-    .qs__vacio, .em__vacio{ 
-        height: 150px;
+    .en__titGral1{  
+        margin-left: 13px;
     }
-    .xx__footer__contacto{ 
-        margin-left: 0px;
+    .en__titGral2{  
+        margin-left: 81px;
     }
-  
+    .xx__footer__p{ 
+        text-align: center;
+    }
 }
 /*-------------------------------------------------------tamaño entre 761 y 767------------------------------------------ */
 @media screen and (min-width:761px) and (max-width:767px) {
@@ -700,12 +650,12 @@ textarea { border: 1px; font-size: 1.2rem; }
             padding: 8px;
         }
         .Parrafo1__p{   
-            line-height: 17px;
-            height: 32rem;
+            line-height: 20px;
+            height: 36rem;
         }
         .Parrafo2__p{   
-            line-height: 17px;
-            height: 16rem;
+            line-height: 20px;
+            height: 18rem;
         }
         .pa__iframe img{    
             width: 17rem;
@@ -717,37 +667,18 @@ textarea { border: 1px; font-size: 1.2rem; }
         .pa__global p{   
             font-size:map-get($font-sizes, ceroNueve);
         }
-        .pa__turnos{    
-            margin-top: 50px;
-            margin-left: 10px;
-        }
-        .pa__vacio{ 
-            height: 385px;
-        }
         .qs__global{    
-            height: 40rem;
+            height: 45rem;
         }
         .em__global{    
             height: 42rem;
         }
         .qs__global p, .em__global p{   
-            font-size:map-get($font-sizes, ceroNueve);
+            font-size:map-get($font-sizes, uno);
         }
-        .xx__footer__contacto{  
-            margin-left: 0px;
-        }
-        .qs__turnos, .em__turnos{ 
-            height: 50px;
-            font-size:map-get($font-sizes, dos);
-        }
-        .em__turnos{    
-            margin-top: 40px;
-        }
-        .qs__vacio{ 
-            height: 110px;
-        }
-        .em__vacio{ 
+        .qs__turnos, .pa__turnos, .em__turnos{ 
             height: 140px;
+            font-size:map-get($font-sizes, unoSeis);
         }
         .encuesta{  
             height: 100px;
@@ -761,10 +692,19 @@ textarea { border: 1px; font-size: 1.2rem; }
         .encuesta a{   
             margin-top: 0px;
             font-size:map-get($font-sizes, ceroNueve);
-            // margin-right: 70px; 
             width: 154px;   
          }
-      
+        .en__titGral1{  
+            margin-left: 2px;
+            font-size:map-get($font-sizes, unoSiete);
+        }
+        .en__titGral2{  
+            margin-left: 48px;
+            font-size:map-get($font-sizes, unoSiete);
+        }
+        .xx__footer__p{ 
+            text-align: center;
+        }
 }
 
 
@@ -801,11 +741,11 @@ textarea { border: 1px; font-size: 1.2rem; }
         height: 15rem;
      }
     .Parrafo1__p{ 
-        line-height: 15px;
-        height: 500px;   
+        line-height: 20px;
+        height: 588px;   
     }
     .Parrafo2__p{    
-        line-height: 15px;
+        line-height: 20px;
     }
     .encuesta{  
         height: 235px;
@@ -823,18 +763,23 @@ textarea { border: 1px; font-size: 1.2rem; }
         width: 154px;   
         margin-right: 50px;
     }
-  
- 
-    .xx__footer__contacto a{  
-        line-height: 40px;
+    .xx__footer__p{ 
+        text-align: center;
     }
-
+    .en__titGral1{  
+        margin-left: 0px;
+        font-size:map-get($font-sizes, dos);
+    }
+    .en__titGral2{  
+        margin-left: 64px;
+        font-size:map-get($font-sizes, dos);
+    }
     .co__caja{ 
-        width: 250px;
+        width: 239px;
         line-height: 50px;
     }
     .co__caja1{ 
-        width: 400px;
+        width: 239px;
         height: 200px;
     }
     .co__botones{  
@@ -856,46 +801,27 @@ textarea { border: 1px; font-size: 1.2rem; }
         height: 16rem;
      }
     .pa__global{ 
-        height: 50rem;
+        height: 54rem;
     }
     .pa__global p{   
-        font-size:map-get($font-sizes, ceroSiete);
-    }
-    .pa__turnos{    
-        margin-top: 140px;
-        margin-left: 15px;
-    }
-    .pa__vacio{ 
-        height: 250px;
+        font-size:map-get($font-sizes, uno);
     }
     .qs__iframe img, .em__iframe img{    
         width: 300px;
         height: 400px;
      }
     .qs__global{ 
-        height: 52rem;
-        font-size:map-get($font-sizes, unoTres);
+        height: 45rem;
+        font-size:map-get($font-sizes, uno);
     }
-    .qs__turnos{    
+    .qs__turnos, .pa__turnos, .em__turnos{    
         height: 140px;
         font-size:map-get($font-sizes, unoSeis);
     }
-    .qs__vacio{    
-        height: 210px;
-    }
     .em__global{    
-        height: 55rem;
-        font-size:map-get($font-sizes, unoDos);
+        height: 45rem;
+        font-size:map-get($font-sizes, uno);
     }
-    .em__vacio{ 
-        height: 200px;
-    }
-    .em__turnos{   
-        margin-top: 100px;
-        height: 100px;
-        font-size:map-get($font-sizes, unoSeis);
-    }
-  
     
  }
   /* --------------------------------------------------tamaño entre 480 y 499--------------------------------------------- */
@@ -927,13 +853,17 @@ textarea { border: 1px; font-size: 1.2rem; }
   
     .Parrafo1__p{   
         height: 45rem;
+        margin-left: 0px;
+    }
+    .Parrafo2__p{   
+        margin-left: 0px;
     }
     .Parrafo2__titulo{  
         margin-top: 40px;
     }
     .encuesta__titulo{ 
         width: 55%;
-        font-size:map-get($font-sizes, unoSeis);
+        font-size:map-get($font-sizes, unoCinco);
         line-height: 30px;
      }
    
@@ -944,62 +874,48 @@ textarea { border: 1px; font-size: 1.2rem; }
      }
   
     .qs__global, .em__global{    
-        height: 60rem;
-        font-size:map-get($font-sizes, unoDos);
+        height: 45rem;
+        font-size:map-get($font-sizes, uno);
     }
-    .qs__turnos{    
-        height: 50px;
+    .em__global{    
+        margin-left: 0px;
+    }
+    .qs__turnos, .pa__turnos, .em__turnos{    
+        height: 140px;
         font-size:map-get($font-sizes, unoSeis);
-    }
-    .qs__vacio{ 
-        height: 0px;
     }
     .xx__footer{    
         height: 250px;
     }
  
     .xx__footer__p{ 
-        height: 70px;
-    }
-    .xx__footer__contacto{  
-        margin-right: 20px;
-        height: 50px;
-        color: black;
-        line-height: 30px;
-        text-align: center;
-        background-color: aquamarine;
-        font-size:map-get($font-sizes, uno);
-        font-family: Arial, Helvetica, sans-serif;
-        border-color:rgb(243, 166, 224);
-        border-style: solid;
-    }
-    .xx__footer__contacto a{  
-        line-height: 50px;  
-        text-decoration: none;
-    }
-    .xx__footer__leyendas{  
-        margin-top: 10px;
-        margin-left: 100px;
+         text-align: center;
     }
     .pa__iframe img{    
         width: 16rem;
         height: 16rem;
      }
     .pa__global{ 
-        height: 50rem;
+        height: 54rem;
+        margin-left: 0px;
     }
     .pa__global p{   
-        font-size:map-get($font-sizes, ceroSiete);
-    }
-    .pa__turnos{    
-        margin-top: 40px;
-        margin-left: 15px;
+        font-size:map-get($font-sizes, uno);
     }
     .co__global{    
         height: 1100px;
     }
+    .co__caja1, .co__caja{  
+        width: 350px;
+    }
     .fotoFondo{    
         display: none;
+    }
+    .en__titGral1{  
+        margin-left: 73px;
+    }
+    .en__titGral2{  
+        margin-left: 134px;
     }
  }
  /* ----------------------------------------------------tamaño entre 400 y 479------------------------------------------ */
@@ -1032,9 +948,13 @@ textarea { border: 1px; font-size: 1.2rem; }
   
     .Parrafo1__p{   
         height: 45rem;
+        margin-left: 0px;
+    }
+    .Parrafo2__p{   
+        margin-left: 0px;
     }
     .Parrafo1__p .Parrafo2__p{  
-        font-size:map-get($font-sizes, ceroSeis);
+        font-size:map-get($font-sizes, uno);
     }
     .Parrafo2__titulo{  
         margin-top: 40px;
@@ -1044,7 +964,7 @@ textarea { border: 1px; font-size: 1.2rem; }
     }
     .encuesta__titulo{ 
         width: 55%;
-        font-size:map-get($font-sizes, unoSeis);
+        font-size:map-get($font-sizes, unoTres);
         line-height: 30px;
      }
    
@@ -1054,54 +974,27 @@ textarea { border: 1px; font-size: 1.2rem; }
         width: 154px;   
      }
     .qs__global{    
-        height: 60rem;
-        font-size:map-get($font-sizes, unoDos);
+        height: 47rem;
+        font-size:map-get($font-sizes, uno);
     }
-    .qs__vacio{ 
-        height: 100px;
-    }
-    .qs__turnos{    
-        height: 50px;
+    .qs__turnos, .pa__turnos, .em__turnos{    
+        height: 140px;
         font-size:map-get($font-sizes, unoCuatro);
     }
   
     .xx__footer__p{ 
-        margin-top: 50px;
-    }
-    
-    .xx__footer__contacto{  
-        margin-right: 20px;
-        height: 50px;
-        color: black;
-        line-height: 30px;
         text-align: center;
-        margin-left: 100px; 
-        background-color: aquamarine;
-        font-size:map-get($font-sizes, uno);
-        font-family: Arial, Helvetica, sans-serif;
-        border-color:rgb(243, 166, 224);
-        border-style: solid;
-    }
-    .xx__footer__contacto a{  
-        line-height: 50px;  
-        text-decoration: none;
-    }
-    .xx__footer__leyendas{  
-        margin-top: 30px;
-        margin-left: 100px;
     }
     .pa__iframe img{    
         width: 14rem;
         height: 14rem;
      }
     .pa__global{ 
-        height: 50rem;
+        height: 63rem;
+        margin-left: 0px;
     }
     .pa__global p{   
-        font-size:map-get($font-sizes, ceroSiete);
-    }
-    .pa__turnos{    
-        margin-top: 40px;
+        font-size:map-get($font-sizes, uno);
     }
     .co__global{    
         height: 1100px;
@@ -1109,22 +1002,27 @@ textarea { border: 1px; font-size: 1.2rem; }
     .co__reset{ 
         margin-left: 180px;
     }
+    .co__caja, .co__caja1{  
+        width: 350px;
+    }
     .em__global{    
-        height: 69rem;
-        font-size:map-get($font-sizes, unoDos);
+        height: 52rem;
+        font-size:map-get($font-sizes, uno);
+        margin-left: 0px;
     }
-    .em__turnos{    
-        height: 50px;
-        font-size:map-get($font-sizes, unoCinco);
-        margin-top: 35px;
-    }
-    .em__vacio{ 
-        height: 108px;
-    }
+
     .fotoFondo{    
         display: none;
     }
-   
+    .en__titGral1{  
+        margin-left: 26px;
+    }
+    .en__titGral2{  
+        margin-left: 95px;
+    }
+    .en__cuerpo{    
+        height: 1000px;
+    }
  }
  /*-----------------------------------------------------tamaño entre 300 y 399 --------------------------------------*/
  @media screen and (min-width:300px) and (max-width:399px) {
@@ -1172,43 +1070,41 @@ textarea { border: 1px; font-size: 1.2rem; }
             }
      }
 
-     .vacio{ 
-        height: 300px;
-        width: 300px;
-     }
-     .Parrafo1__header{  
+    .Parrafo1__header{  
         margin: auto;
         height: 50px;
      }
-     .Parrafo1__titulo{   
+    .Parrafo1__titulo{   
         font-size:map-get($font-sizes, unoCinco);
      }
-     .Parrafo1__p{   
-        line-height: 15px;
+    .Parrafo1__p{   
+        line-height: 20px;
         padding: 0px 15px;
-        height: 450px;
-        font-size:map-get($font-sizes, ceroSiete);
+        height: 773px;
+        font-size:map-get($font-sizes, uno);
+        margin-left: 0px;
      }
-     .Parrafo2__header{  
+    .Parrafo2__header{  
         margin: auto;
         margin-top: 40px;
      }
-     .Parrafo1__titulo{   
+    .Parrafo1__titulo{   
         margin-top: 10px;
      }
-     .Parrafo2__p{   
-        line-height: 15px;
+    .Parrafo2__p{   
+        line-height: 20px;
         padding: 0px 15px;
-        height: 250px;
-        font-size:map-get($font-sizes, ceroSiete);
+        height: 324px;
+        font-size:map-get($font-sizes, uno);
+        margin-left: 0px;
      }
-     .encuesta{   
+    .encuesta{   
         @include flexs (flex, row, center);
         margin: auto;
         flex-wrap: wrap;
         align-items: center;
      }
-     .encuesta__titulo{  
+    .encuesta__titulo{  
         width: 100%;
         margin: auto;
         font-size:map-get($font-sizes, unoCinco);
@@ -1218,25 +1114,24 @@ textarea { border: 1px; font-size: 1.2rem; }
     .iconos{    
          width: 100%;
          margin: auto;
-         margin-left: 100px;
-
-     }
+    }
+    .en__tituloLabel{   
+        font-size:map-get($font-sizes, dosCinco);
+    } 
+    .en__cuerpo{    
+        height: 1000px;
+    }
     .co__global{    
         height: 1000px;
     }
     .co__caja{ 
-        width: 200px;
+        width: 250px;
         line-height: 50px;
     }
     .co__caja1{ 
-        width: 300px;
+        width: 250px;
         height: 250px;
     }
-
-    .en__titGral1, .en__titGral2{ 
-        font-size:map-get($font-sizes, unoCinco);
-    }
- 
     .en__boton{ 
         width: 300px;
         font-size:map-get($font-sizes, unoSiete);
@@ -1274,18 +1169,20 @@ textarea { border: 1px; font-size: 1.2rem; }
         }
      }
     .qs__global{ 
-        height: 60rem;
+        height: 51rem;
         margin-top: 90px;
+        margin-left: 0px;
         line-height: 20px;
         padding: 0px 15px;
         font-size:map-get($font-sizes, uno);
     }
 
     .pa__global{ 
-        height: 67rem;
+        height: 76rem;
+        margin-left: 0px;
     }
     .pa__global p{   
-        font-size:map-get($font-sizes, ceroSeis);
+        font-size:map-get($font-sizes, uno);
     }
     .pa__titGral{ 
         display: inline-block;
@@ -1300,10 +1197,7 @@ textarea { border: 1px; font-size: 1.2rem; }
         padding:0px 10px;
     }
 
-    .pa__turnos{    
-        margin-top: 40px;
-        margin-left: 5px;
-    }
+ 
     .pa__iframe img{    
         width: 14rem;
         height: 14rem;
@@ -1311,56 +1205,30 @@ textarea { border: 1px; font-size: 1.2rem; }
             transform: none;
         }
      }
-    .pa__turnos{    
-        margin-top: 40px;
-    }
+
     
-    .qs__turnos{ 
+    .qs__turnos, .pa__turnos, .em__turnos{ 
         font-size:map-get($font-sizes, unoCinco);
         margin-left: 5px;
     }
-    .qs__vacio{ 
-        height: 0px;
-    }
+
     .xx__footer{    
+        @include flexs (flex, column, center);
         height: 200px;
+        margin: auto;
     }
   
     .xx__footer__p{ 
-        width: 100%;
-        height: 80px;
-        font-size:map-get($font-sizes, unoCuatro);
-    }
-    .xx__footer__contacto{  
-        height: 50px;
-        color: black;
-        line-height: 30px;
         text-align: center;
-        background-color: aquamarine;
-        font-size:map-get($font-sizes, uno);
-        font-family: Arial, Helvetica, sans-serif;
-        border-color:rgb(243, 166, 224);
-        border-style: solid;
-        margin: auto;
     }
-    .xx__footer__contacto a{  
-        line-height: 50px;  
-        text-decoration: none;
-    }
-    .xx__footer__leyendas{  
-        display: block;
-        margin-top: 30px;
-        margin-left: 100px;
-        .iconos{    
-            margin-left: 0px;
-        }
-    }
+   
  
     .bl__titGral{   
         margin-left: 50px;
     }
     .em__global{ 
         height: 70rem;
+        margin-left: 0px;
     }
     .em__titGral{ 
         display: inline-block;
@@ -1368,19 +1236,13 @@ textarea { border: 1px; font-size: 1.2rem; }
         margin-left: 100px;
     }
     .em__global p{
-        font-size:map-get($font-sizes, ceroSiete);
+        font-size:map-get($font-sizes, uno);
     }
-    .em__turnos{ 
-        height: 145px;
-        margin-top: 0px;
-        font-size:map-get($font-sizes, unoSeis);
-        margin-left: 5px;
-    }
-    .em__vacio{ 
-        height: 0px;
-    }
-    .encuest{   
+ 
+    .encuesta{   
         height: 130px;
     }
-    
+    .encuesta__titulo{  
+        text-align: center;
+    }
 }
